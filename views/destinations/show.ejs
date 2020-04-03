@@ -1,0 +1,56 @@
+<%- include ('../partials/header.ejs'); -%>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead text-center">Destination Shown On Map</p>
+            <div id="map"></div>
+        </div>
+        <div class="col-md-9">
+            <div class="card mb-3">
+                <img class="card-img-top" src="<%=destination.image%>">
+                <div class="card-body">
+                    <p class="float-right">$<%=destination.cost%>/day</p>
+                  <h4 class="card-title"><%=destination.name%></h4>
+                  <p class="card-text"><%=destination.description%></p>  
+                  <p> <em> Submitted By: <%=destination.author.username%> </em> </p>
+                  <% if(currentUser && destination.author.id.equals(currentUser._id)) { %>
+                    <a class="btn btn-warning" href="/destinations/<%=destination._id%>/edit"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a> 
+                    <form class="item-inline" action="/destinations/<%=destination._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button> 
+                    </form>  
+                  <% } %> 
+                </div> 
+            </div>        
+                  <div class="card card-body bg-light">
+                    <div class="float-right">
+                        <a class="btn btn-info float-right" href="/destinations/<%=destination._id%>/comments/new">Add New Comment</a> 
+                    </div>
+                    <hr>
+                    <% destination.comments.forEach(function(comment){ %>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <strong><%= comment.author.username %></strong> 
+                                <span class="float-right text-secondary"><%= moment(comment.created).fromNow() %></span>
+                                <p><%= comment.text %></p>
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <a class="btn btn-sm btn-outline-warning" href="/destinations/<%=destination._id%>/comments/<%=comment._id%>/edit">Edit</a>
+                                <form class="item-inline" action="/destinations/<%=destination._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button> 
+                                <% } %>                          
+                                </form>
+                            </div>
+                        </div> 
+                      <% }) %>
+                  </div>                
+              </div>
+        </div>
+    </div>
+
+    <div id='map' style='width: 400px; height: 300px;'></div>
+    <p id="lat" style="display:none"><%= destination.lat %></p>
+    <p id="lng" style="display:none"><%= destination.lng %></p>
+    <script src="/js/map.js"></script>
+    
+<%- include ('../partials/footer.ejs'); -%>
+
