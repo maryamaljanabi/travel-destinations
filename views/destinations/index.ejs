@@ -1,0 +1,26 @@
+<%- include ('../partials/header.ejs'); -%>
+
+<div class="container">
+    <header class="jumbotron text-center mt-3">
+        <h1><i class="fa fa-compass" aria-hidden="true"></i>  Welcome to Travel Destinations</h1>
+        <p>Wondering where to go next holiday? Don't worry! Here you can view our awesome hand-picked destinations from all over the world. And you can add a new destination that you like to help other users choose their perfect holiday destination.</p>
+        <a class="btn btn-dark" href="/destinations/new">Add New Destination</a>
+    </header>
+    
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+        <% destinations.forEach(function(destination){ %>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card m-2">
+                <img src="<%= destination.image %>" class="card-img-top">
+                <div class="card-body">
+                <h5 class="card-title"><%= destination.name %></h5>
+                <p class="card-text"><%=destination.description.substring(0,100)%></p>
+                <a href="/destinations/<%=destination._id%>" class="btn btn-dark">More info</a>
+                </div>
+            </div>
+        </div>
+        <% }); %> 
+    </div>
+</div>
+
+<%- include ('../partials/footer.ejs'); -%>

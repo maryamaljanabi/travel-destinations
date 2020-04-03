@@ -1,0 +1,16 @@
+<%- include ('../partials/header.ejs'); -%>
+
+<div class="container mt-5" style="width: 50%; margin: auto;">
+    <h2 style="text-align: center;">Add a New Comment to <%=destination.name%></h2>
+    <div class="mb-2 pt-4">
+        <form action="/destinations/<%=destination._id%>/comments" method="POST">
+            <div class="form-group">
+              <label for="text">Text</label>
+              <textarea class="form-control" id="text" name="comment[text]"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Submit</button>
+          </form>
+    </div>
+</div>
+
+<%- include ('../partials/footer.ejs'); -%>
