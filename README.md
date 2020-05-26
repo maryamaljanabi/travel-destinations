@@ -5,14 +5,14 @@
 - [Introduction](#Introduction)
 - [Demo](#demo)
 - [Features](#features)
-- [Technologies](#technologies)
+- [Technology](#technology)
 - [Run](#run)
 - [Sources](#sources)
 - [License](#license)
 
 ## Introduction
 
-A web application that allows users to add their favorite travel destinations and discover places added by others.
+A responsive web application that allows users to add their favorite travel destinations and discover places added by others.
 
 ## Demo
 
@@ -22,9 +22,9 @@ A web application that allows users to add their favorite travel destinations an
 
 This application is deployed on Heroku and can be accessed through the following link:
 
-[![Heroku](https://heroku-badge.herokuapp.com/?app=angularjs-crypto&style=flat)](https://travel-destinations.herokuapp.com/)
+[Travel Destinations on Heroku](https://travel-destinations.herokuapp.com/)
 
-## Technologies
+## Technology
 
 The application is built with:
 
@@ -64,4 +64,4 @@ This application was created after finishing [The Web Developer Bootcamp](https:
 [![License](https://img.shields.io/:License-MIT-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - MIT License
-- Copyright 2020 © [Maryam AJ.](https://github.com/maryam-aj)
+- Copyright 2020 © [Maryam Aljanabi](https://github.com/maryam-aljanabi)
