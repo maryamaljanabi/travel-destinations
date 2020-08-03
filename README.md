@@ -64,4 +64,4 @@ This application was created after finishing [The Web Developer Bootcamp](https:
 [![License](https://img.shields.io/:License-MIT-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - MIT License
-- Copyright 2020 © [Maryam Aljanabi](https://github.com/maryam-aljanabi)
+- Copyright 2020 © [Maryam Aljanabi](https://github.com/maryamaljanabi)
