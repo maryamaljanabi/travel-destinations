@@ -18,7 +18,7 @@
     "express-session": "^1.17.0",
     "geojson": "^0.5.0",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongoose": "^5.9.6",
     "node-geocoder": "^3.27.0",
     "passport": "^0.4.1",
