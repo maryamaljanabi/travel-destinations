@@ -18,12 +18,13 @@ var commentRoutes = require("./routes/comments"),
 
 var url = process.env.DATABASEURL || "mongodb://localhost/travel_destinations";
 var port = process.env.PORT || 3000;
-mongoose.connect(url);
+
 mongoose
   .connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: false,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
   })
   .then(() => {
     console.log("Connected to DB!");

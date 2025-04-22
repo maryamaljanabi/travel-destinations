@@ -15,15 +15,17 @@ var options = {
 var geocoder = NodeGeocoder(options);
 
 //INDEX
-router.get("/", function(req, res){
-    Destination.find({}, function(err, all_destinations){
-        if(err){
-            req.flash("error","Failed to retrieve all destinations");
-        } else{
-            res.render("destinations/index", {destinations: all_destinations});
-        }
-    });
+router.get("/", async (req, res) => {
+  try {
+    const all_destinations = await Destination.find({}).exec();
+    res.render("destinations/index", { destinations: all_destinations });
+  } catch (err) {
+    console.error("Error retrieving destinations:", err);
+    req.flash("error", "Failed to retrieve destinations");
+    res.redirect("/");
+  }
 });
+
 
 //NEW DESTINATION
 router.get("/new", middleware.isLoggedIn, function(req, res){

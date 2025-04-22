@@ -20,9 +20,9 @@ A responsive web application that allows users to add their favorite travel dest
 
 ![Image description](screenshot2.png)
 
-This application is deployed on Heroku and can be accessed through the following link:
+This application is deployed on Render (Originally it was on Heroku). It can be accessed through the following link but might take a while to load due to using the free plan:
 
-[Travel Destinations on Heroku](https://travel-destinations.herokuapp.com/)
+[Travel Destinations on Render](https://travel-destinations-ex7k.onrender.com/)
 
 ## Technology
 
@@ -49,11 +49,37 @@ The application allows users to do the following things:
 
 ## Run
 
-To run the application, you have to run npm install to install the required packages in the package.json. Then you have to set your own environmental variables. For security reasons, some variables have been hidden from view and used as environmental variables with the help of dotenv package. Below are the variables that you need to set in order to run the application:
+To run this application locally, follow these steps:
 
-- DATABASEURL: this is the connection string of your MongoDB Atlas database.
-- GEOCODER_PROVIDER: the name of the geocoder API that is used to geocode the longitude and latitude entered by users when they create a new destination.
-- GEOCODER_API_KEY: the key that you will get when you set up an account for any API that you will use for geocoding.
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Create a `.env` file in the root directory and set the following environment variables:
+
+   ```
+   DATABASEURL: this is the connection string of your MongoDB Atlas database.
+   GEOCODER_PROVIDER: the name of the geocoder API that is used to geocode the longitude and latitude entered by users when they create a new destination.
+   GEOCODER_API_KEY: the key that you will get when you set up an account for any API that you will use for geocoding.
+   ```
+
+3. (Optional) Seed the database with sample destinations:
+
+   ```bash
+   npm run seed
+   ```
+
+   This will create a sample user (username: "admin", password: "admin123") and add some initial destinations.
+
+4. Start the application:
+
+   ```bash
+   npm start
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`
 
 ## Sources
 
